@@ -44,9 +44,9 @@ test_dataset_loader = DataLoader(dataset = test_dataset, batch_size = 8)
 
 # 2. Define a Convolutional Network
 
-net = ResNet34()
+# net = ResNet34()
 # net = LeNet()
-
+net =ResNet18()
 
 model_name = net.__name__
 print(model_name + ' is ready!')
