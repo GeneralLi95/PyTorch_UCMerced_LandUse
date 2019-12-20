@@ -1,0 +1,8 @@
+
+*.pyc
+.DS_Store
+*.xml
+*.iml
+images/
+checkpoint/
+
