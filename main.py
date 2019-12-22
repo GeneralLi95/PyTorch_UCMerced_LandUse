@@ -137,6 +137,6 @@ def test(epoch):
         best_acc = acc
         print('Acc > best_acc, Saving net, acc')
 
-for epoch in range(start_epoch, start_epoch+100):
+for epoch in range(start_epoch, start_epoch+150):
     train(epoch)
     test(epoch)
