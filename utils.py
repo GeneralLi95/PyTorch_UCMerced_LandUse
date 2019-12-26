@@ -64,3 +64,36 @@ def format_time(seconds):
     if f == '':
         f = '0ms'
     return f
+
+class ApplyTransform(Dataset):
+    """
+    Apply transformations to a Dataset
+
+    Arguments:
+        dataset (Dataset): A Dataset that returns (sample, target)
+        transform (callable, optional): A function/transform to be applied on the sample
+        target_transform (callable, optional): A function/transform to be applied on the target
+
+    """
+    def __init__(self, dataset, transform=None, target_transform=None):
+        self.dataset = dataset
+        self.transform = transform
+        self.target_transform = target_transform
+        # yes, you don't need these 2 lines below :(
+        if transform is None and target_transform is None:
+            print("Am I a joke to you? :)")
+
+    def __getitem__(self, idx):
+        sample, target = self.dataset[idx]
+        if self.transform is not None:
+            sample = self.transform(sample)
+        if self.target_transform is not None:
+            target = self.target_transform(target)
+        return sample, target
+
+    def __len__(self):
+        return len(self.dataset)
+
+'''
+class ApplyTransform is referenced from https://stackoverflow.com/questions/56582246/correct-data-loading-splitting-and-augmentation-in-pytorch
+'''

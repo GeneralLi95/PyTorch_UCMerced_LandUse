@@ -4,11 +4,12 @@
 [UC Merced Land Use Dataset](http://weegee.vision.ucmerced.edu/datasets/landuse.html)
 
 ## Result
+**lr = 0.001, batch_size = 8**
+
 Epoch|4|100|200
 ---|---|---|---
-LeNet| 3.33%|55.71%|-
-ResNet18|45.48%|-|-
-ResNet34|44.05%|74.52%|-
+ResNet18|45.48%|86.19%|91.90%
+ResNet34|44.05%|79.52%|79.52%
 
 ## File structure
 ```
