@@ -19,6 +19,7 @@ parser.add_argument('--lr', default=0.001, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', default=False, action='store_true', help='resume from checkpoint')
 args = parser.parse_args()
 
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # 1. Load and normalizing dataset
@@ -49,10 +50,11 @@ test_dataset_loader = DataLoader(dataset=test_dataset, batch_size=8)
 
 # 2. Define a Convolutional Network
 
-net, model_name = ResNet34(), 'ResNet34'
+
 
 # net, model_name = LeNet(), 'LeNet'
 # net, model_name = ResNet18(), 'ResNet18'
+net, model_name = ResNet34(), 'ResNet34'
 
 print(model_name + ' is ready!')
 
