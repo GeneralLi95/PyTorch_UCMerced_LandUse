@@ -6,6 +6,7 @@
 @time: 2019/12/19 
 """
 import progressbar
+from torch.utils.data import Dataset
 
 
 def get_progress_bar(total):
